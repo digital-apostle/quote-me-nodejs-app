@@ -1,6 +1,6 @@
 var events = require("events");
 var util = require("util");
-var Registration = require("./lib/registration");
+var QuoteApplication = require("./lib/quote-application");
     
 var QuoteMe = function () {
   var self = this;
@@ -11,7 +11,7 @@ var QuoteMe = function () {
 
     //console.log(req);
 
-    var reg = new Registration();
+    var reg = new QuoteApplication();
 
     reg.on("quote-processed", function(QuoteResult){
       console.log("quote-processed event");

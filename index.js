@@ -1,6 +1,10 @@
 var express = require('express');
+const bodyParser = require('body-parser');
 var QuoteMe = require('./QuoteMe.js')
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -9,7 +13,8 @@ app.get('/', (req, res) => {
 app.post('/quote', (req, res) => {
   console.log("/qoute request recived")
   var qm = new QuoteMe();
-  qm.register(req, function (err, result) {
+  console.log(req.body);
+  qm.register(req.body, function (err, result) {
     
     if (result.success) {
       console.log("app.post/quoute success")

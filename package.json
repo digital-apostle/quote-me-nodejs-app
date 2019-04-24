@@ -4,7 +4,11 @@
   "author": "Rob Conery",
   "description": "A Quote system patterned after Devise",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "4.15.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0"
+  }
 }
