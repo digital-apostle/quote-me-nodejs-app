@@ -1,0 +1,10 @@
+{
+  "name": "quote",
+  "version": "0.0.3",
+  "author": "Rob Conery",
+  "description": "A Quote system patterned after Devise",
+  "dependencies": {
+    "express": "4.15.2"
+  },
+  "devDependencies": {}
+}
