@@ -1,28 +1,36 @@
-var express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
-var QuoteMe = require('./QuoteMe.js')
+const quoteMe = require('./lib/quote-me.js');
+const health = require("./models/Health");
+
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/ping', (req, res) => {
+  const message = '{"message":"Ping OK"}';
+  res.json(JSON.parse(message));
+});
+
+app.get('/health', (req, res) => {
+  let healthResponse = new health();
+  healthResponse.serviceStatus("healthy");
+  healthResponse.serviceStatus("healthy");
+  res.json(healthResponse);
 });
 
 app.post('/quote', (req, res) => {
   console.log("/qoute request recived")
-  var qm = new QuoteMe();
+  var qm = new quoteMe();
   console.log(req.body);
   qm.register(req.body, function (err, result) {
     
     if (result.success) {
       console.log("app.post/quoute success")
-      // done(null, result)
       res.json(result)
     } else {
       console.log("app.post/quoute error")
-      // done(null, false, {message: "error"})
       res.json(result)
     }
   });

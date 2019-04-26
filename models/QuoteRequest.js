@@ -1,5 +1,3 @@
-//this is an QuoteRequest for Quote (not our executable)
-//use this to call the Register routine
 var QuoteRequest = function(args){
 
   var rfq = {};
