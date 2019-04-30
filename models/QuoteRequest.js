@@ -1,3 +1,4 @@
+// maps our REST request to a javaScript POJO 
 var QuoteRequest = function(args){
 
   var rfq = {};

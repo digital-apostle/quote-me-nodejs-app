@@ -1,3 +1,5 @@
+// Quote POJO style object which will track the quote as it progress through the generate quote process/
+// not much things of interest here
 var QuotedPremium = function(args){
 
   var quotedPremium = {};

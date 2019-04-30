@@ -1,3 +1,7 @@
+// standard microservice style Health endpoint
+// here for the purpose of API Proxy monitoring features
+// for now it is set by app,js directly - alternatively it could be set dynamically via another endpoint and app.js just gets the status
+
 var Health = function(args){
 
   //  PASS = "healthy";

@@ -21,8 +21,12 @@ app.get('/health', (req, res) => {
 
 app.post('/quote', (req, res) => {
   console.log("/quote request recieved")
+
+  // get an instance of quote generator (?)
   var qm = new quoteMe();
   console.log(req.body);
+
+  //call 
   qm.register(req.body, function (err, result) {
     
     if (result.success) {
@@ -34,6 +38,8 @@ app.post('/quote', (req, res) => {
     }
   });
 });
+
+//app.get quote
 
 var port = 3000;
 
