@@ -14,7 +14,7 @@ var Health = function(args){
   health.serviceStatus = null;
   health.error = error;
 
-  health.serviceStatus = function(status){
+  health.setServiceStatus = function(status){
     health.status = status;
   };
 

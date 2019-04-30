@@ -15,37 +15,28 @@ app.get('/ping', (req, res) => {
 
 app.get('/health', (req, res) => {
   let healthResponse = new health();
-  healthResponse.serviceStatus("healthy");
-  healthResponse.serviceStatus("healthy");
+  healthResponse.setServiceStatus("healthy");
   res.json(healthResponse);
 });
 
 app.post('/quote', (req, res) => {
-  console.log("/qoute request recived")
+  console.log("/quote request recieved")
   var qm = new quoteMe();
   console.log(req.body);
   qm.register(req.body, function (err, result) {
     
     if (result.success) {
-      console.log("app.post/quoute success")
+      console.log("app.post/quote success")
       res.json(result)
     } else {
-      console.log("app.post/quoute error")
+      console.log("app.post/quote error")
       res.json(result)
     }
   });
 });
-
-//const quoteRouter = require('./routes/quote-routes');
-
-//app.use('/', mainRouter);
-//app.use('/', quoteRouter);
-
 
 var port = 3000;
 
 app.listen(port);
 
 console.log("listening on port 3000");
-
-//module.exports = app;

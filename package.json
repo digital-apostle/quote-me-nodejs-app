@@ -1,14 +1,16 @@
 {
-  "name": "quote",
+  "name": "car-quote-me",
   "version": "0.0.3",
-  "author": "Rob Conery",
-  "description": "A Quote system patterned after Devise",
+  "author": "Darren Kabengele",
+  "description": "A Car Insurance Quote REST based service",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0"
+    "eslint-config-standard": "^12.0.0",
+    "should": "^13.2.3"
   }
 }

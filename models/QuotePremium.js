@@ -3,11 +3,17 @@ var QuotedPremium = function(args){
   var quotedPremium = {};
 
   quotedPremium.createdAt = new Date();
+  quotedPremium.currency = "GBP"
   quotedPremium.premium = 0;
   quotedPremium.premiumBeforeDiscount = 0;
   quotedPremium.discount = 0;
   quotedPremium.status = "pending";
+  quotedPremium.reference = "unassigned";
 
+
+  quotedPremium.setReference = function(reference){
+    quotedPremium.reference = reference;
+  };
 
   quotedPremium.setStatus = function(status){
     quotedPremium.status = status;
